@@ -1,8 +1,9 @@
+import os
 from peewee import *
 import argparse
 
-# Define the database and the model
-db = SqliteDatabase('products.db')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+db = SqliteDatabase(os.path.join(BASE_DIR, 'products.db'))
 
 
 class ProductModel(Model):
