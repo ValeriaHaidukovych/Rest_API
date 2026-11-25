@@ -8,7 +8,10 @@ from db import (ProductModel,
                 create_product,
                 get_product_by_id,
                 update_product,
-                delete_product)
+                delete_product,
+                db)
+
+db.create_tables([ProductModel])
 
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
